@@ -34,13 +34,13 @@ final Map<String, Function> routes = {
   '/keyBasicDemo': (contxt) => const KeyBasicDemo(),
   '/globalKeyDemo': (contxt) => const GlobalKeyDemo(),
   '/globalKeyUse': (contxt) => const GlobalKeyUseDemo(),
-  '/sliverDemo':(contxt) => const SliverDemo(),
-  '/persistentHeader':(contxt) => const PersistentHeaderRoute(),
+  '/sliverDemo': (contxt) => const SliverDemo(),
+  '/persistentHeader': (contxt) => const PersistentHeaderRoute(),
 };
 
 void addRoute() {
   for (var element in aPosts) {
-    Map<String,Function> temp = {element.route:element.wFunction};
+    Map<String, Function> temp = {element.route: element.wFunction};
     routes.addAll(temp);
   }
 }

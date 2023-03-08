@@ -124,7 +124,8 @@ class _DialogDemoState extends State<DialogDemo> {
             title: '自定义弹窗',
             content: '这是显示内容',
             onClosed: () {
-              Navigator.pop(context,'自定义取消');;
+              Navigator.pop(context, '自定义取消');
+              ;
             },
           );
         });
@@ -168,7 +169,17 @@ class _DialogDemoState extends State<DialogDemo> {
           ElevatedButton(
             onPressed: myDialog,
             child: const Text('自定义dialog'),
-          )
+          ),
+          Container(
+              width: double.infinity,
+              height: 200,
+              color: Colors.black,
+              child: Slider(
+                  value: 0.3,
+                  inactiveColor: Colors.blue[200],
+                  activeColor: Colors.blue,
+                  thumbColor: Colors.amber,
+                  onChanged: ((value) {})))
         ],
       ),
     );

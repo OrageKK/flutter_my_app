@@ -1,4 +1,6 @@
+import 'package:my_app/pages/demo/animation/circleLayoutDemo.dart';
 import 'package:my_app/pages/demo/animation/animatedPadding.dart';
+import 'package:my_app/pages/demo/animation/dou.dart';
 
 import '../pages/demo/animation/animatedContainer.dart';
 import '../pages/demo/animation/animatedDefaultTextStyle.dart';
@@ -101,8 +103,7 @@ List<AnimatedPage> aPosts = [
     title: 'AnimatedIconDemo',
     subTitle: '显式动画',
     route: '/aAicon',
-    wFunction: (contxt, {arguments}) =>
-        AnimatedIconDemo(arguments: arguments),
+    wFunction: (contxt, {arguments}) => AnimatedIconDemo(arguments: arguments),
   ),
   AnimatedPage(
     title: 'StaggeredAnimatedDemo',
@@ -110,5 +111,17 @@ List<AnimatedPage> aPosts = [
     route: '/aStaggered',
     wFunction: (contxt, {arguments}) =>
         StaggeredAnimatedDemo(arguments: arguments),
+  ),
+  AnimatedPage(
+    title: 'RotationTransition',
+    subTitle: '抖动动画',
+    route: '/aDou',
+    wFunction: (contxt, {arguments}) => AnimatedDouDemo(arguments: arguments),
+  ),
+  AnimatedPage(
+    title: 'CircleLayoutDemo',
+    subTitle: '圆形布局',
+    route: '/acircle',
+    wFunction: (contxt, {arguments}) => CircleLayoutDemo(arguments: arguments),
   ),
 ];

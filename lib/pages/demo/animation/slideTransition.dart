@@ -42,6 +42,7 @@ class _SlideTransitionDemoState extends State<SlideTransitionDemo>
         onPressed: () {
           setState(() {
             flag = !flag;
+            // _controller.repeat();
           });
         },
       ),
@@ -69,20 +70,19 @@ class _SlideTransitionDemoState extends State<SlideTransitionDemo>
 
             // 3.链式操作修改动画效果
             // position: Tween(
-            //         begin: const Offset(0, -1),//表示实际的位置向上移动自身高度的1倍
+            //         begin: const Offset(0, -1), //表示实际的位置向上移动自身高度的1倍
             //         end: const Offset(0, 0.8) //表示实际的位置向下移动自身高度的0.8倍
             //         )
             //     .chain(CurveTween(curve: Curves.bounceIn))
             //     .animate(_controller),
 
             // 3.链式操作修改动画时间
-            position: Tween(
-                    begin: const Offset(0, -1),
-                    end: const Offset(0, 0.8) 
-                    )
-                .chain(CurveTween(curve: Curves.bounceIn))
-                .chain(CurveTween(curve: const Interval(0.8, 1.0))) //最后的百分之20的时间完成动画
-                .animate(_controller),
+            position:
+                Tween(begin: const Offset(0, -1), end: const Offset(0, 0.8))
+                    .chain(CurveTween(curve: Curves.bounceIn))
+                    .chain(CurveTween(
+                        curve: const Interval(0.8, 1.0))) //最后的百分之20的时间完成动画
+                    .animate(_controller),
             child: const FlutterLogo(
               size: 80,
             ),
