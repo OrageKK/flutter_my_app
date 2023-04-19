@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/pages/component/expanded.dart';
 import 'package:my_app/pages/demo/animatedList.dart';
+import 'package:my_app/pages/demo/bulletComment.dart';
 import 'package:my_app/pages/demo/buttondemo.dart';
 import 'package:my_app/pages/demo/dialog.dart';
 import 'package:my_app/pages/demo/homeList.dart';
@@ -32,6 +33,7 @@ class _HomePageState extends State<HomePage>
     Tab(text: 'Stack'),
     Tab(text: 'Align'),
     Tab(text: 'Expand'),
+    Tab(text: '滚动弹幕'),
   ];
 
   final List<Widget> _tabView = const [
@@ -44,6 +46,7 @@ class _HomePageState extends State<HomePage>
     KeepAliveWrapper(child: StackList()),
     KeepAliveWrapper(child: AlignP()),
     KeepAliveWrapper(child: ExpandedComponent()),
+    KeepAliveWrapper(child: BulletComment()),
   ];
 
   @override
@@ -61,7 +64,8 @@ class _HomePageState extends State<HomePage>
   }
 
   @override
-  void dispose() { // 页面销毁声明周期
+  void dispose() {
+    // 页面销毁声明周期
     super.dispose();
     print('home销毁了');
     _tabController.dispose();

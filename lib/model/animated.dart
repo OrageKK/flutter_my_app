@@ -9,6 +9,7 @@ import '../pages/demo/animation/animatedOpacity.dart';
 import '../pages/demo/animation/animatedPositioned.dart';
 import '../pages/demo/animation/animatedSwitcher.dart';
 import '../pages/demo/animation/fadeTransition.dart';
+import '../pages/demo/animation/hx.dart';
 import '../pages/demo/animation/rotationTransition.dart';
 import '../pages/demo/animation/scaleTransition.dart';
 import '../pages/demo/animation/slideTransition.dart';
@@ -123,5 +124,12 @@ List<AnimatedPage> aPosts = [
     subTitle: '圆形布局',
     route: '/acircle',
     wFunction: (contxt, {arguments}) => CircleLayoutDemo(arguments: arguments),
+  ),
+  AnimatedPage(
+    title: 'huxi',
+    subTitle: '圆形呼吸布局',
+    route: '/ahx',
+    wFunction: (contxt, {arguments}) =>
+        CircleLayoutHXDemo(arguments: arguments),
   ),
 ];
