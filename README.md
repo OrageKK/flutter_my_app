@@ -1,3 +1,4 @@
+![](https://img.shields.io/badge/flutter-3.3.2-orange?style=flat-square&logo=flutter) ![](https://img.shields.io/badge/dart-2.18.1-brightgreen?style=flat-square&logo=dart) ![](https://img.shields.io/badge/DevTools-2.15.0-lightgrey?style=flat-square&logo=devdotto)
 # flutter_my_app
 
 A new Flutter project.
