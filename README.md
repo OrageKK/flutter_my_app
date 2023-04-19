@@ -27,6 +27,7 @@ A new Flutter project.
   - ListView
   - TabBarView
   - CustomScrollView 和 Slivers
+  - 滚动弹幕效果
 - 动画
   - 隐式动画
   - 显式动画
@@ -37,6 +38,7 @@ A new Flutter project.
 
 - fluttertoast: ^8.0.9
 - cached_network_image: ^3.2.2
+- flutter_staggered_grid_view: ^0.6.2
 
 ## Getting Started
 
