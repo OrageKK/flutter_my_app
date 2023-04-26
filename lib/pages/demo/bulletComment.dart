@@ -2,8 +2,10 @@ import 'dart:async';
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class BulletComment extends StatefulWidget {
   const BulletComment({super.key});
@@ -66,29 +68,48 @@ class _BulletCommentState extends State<BulletComment> {
 
     return Column(
       children: [
-        Container(
-          height: 120,
-          margin: const EdgeInsets.only(top: 30),
-          child: MasonryGridView.count(
-            physics: const BouncingScrollPhysics(
-                parent: AlwaysScrollableScrollPhysics()),
-            controller: _controller,
-            scrollDirection: Axis.horizontal,
-            crossAxisCount: 3,
-            mainAxisSpacing: 20,
-            crossAxisSpacing: 10,
-            itemBuilder: (context, index) {
-              int remainder = index % words.length;
-              return Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                decoration: BoxDecoration(
-                  color: getRandomColor(),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Text(words[remainder]),
-              );
-            },
+        GestureDetector(
+          onTapUp: (details) {
+            _timer.cancel();
+            Timer(const Duration(milliseconds: 100), () {
+              GestureBinding.instance.handlePointerEvent(PointerAddedEvent(
+                  pointer: 0, position: details.globalPosition));
+              GestureBinding.instance.handlePointerEvent(PointerDownEvent(
+                  pointer: 0, position: details.globalPosition));
+              GestureBinding.instance.handlePointerEvent(
+                  PointerUpEvent(pointer: 0, position: details.globalPosition));
+            });
+          },
+          child: Container(
+            height: 120,
+            margin: const EdgeInsets.only(top: 30),
+            child: MasonryGridView.count(
+              physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
+              controller: _controller,
+              scrollDirection: Axis.horizontal,
+              crossAxisCount: 3,
+              mainAxisSpacing: 20,
+              crossAxisSpacing: 10,
+              itemBuilder: (context, index) {
+                int remainder = index % words.length;
+                return GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () {
+                    Fluttertoast.showToast(msg: words[remainder]);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 8.0),
+                    decoration: BoxDecoration(
+                      color: getRandomColor(),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Text(words[remainder]),
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ],
