@@ -1,3 +1,4 @@
+![](https://img.shields.io/badge/flutter-3.3.2-orange?style=flat-square&logo=flutter) ![](https://img.shields.io/badge/dart-2.18.1-brightgreen?style=flat-square&logo=dart) ![](https://img.shields.io/badge/DevTools-2.15.0-lightgrey?style=flat-square&logo=devdotto)
 # flutter_my_app
 
 A new Flutter project.
@@ -27,6 +28,7 @@ A new Flutter project.
   - ListView
   - TabBarView
   - CustomScrollView 和 Slivers
+  - 滚动弹幕效果
 - 动画
   - 隐式动画
   - 显式动画
@@ -37,6 +39,7 @@ A new Flutter project.
 
 - fluttertoast: ^8.0.9
 - cached_network_image: ^3.2.2
+- flutter_staggered_grid_view: ^0.6.2
 
 ## Getting Started
 
